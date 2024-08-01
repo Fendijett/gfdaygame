@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: gf-day-game
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
