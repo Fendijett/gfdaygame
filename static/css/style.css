@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffe6e6;
+    color: #ff4d4d;
+}
+
+h1, h2, h3 {
+    margin-top: 50px;
+}
+
+#joinForm, #inputWords, #countdown {
+    margin-top: 50px;
+}
+
+#joinForm input, #inputWords input {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#inputWords button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#heartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    height: 100vh;
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    display: inline-block;
+    background-color: #ff4d4d;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.5s;
+    transform: rotate(-45deg);
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ff4d4d;
+    position: absolute;
+    top: -50px;
+    left: 0;
+}
+
+.heart:after {
+    left: 50px;
+}
+
+.heart.hidden {
+    color: transparent;
+}
+
+.heart.revealed {
+    display: none;
+}
+
+@keyframes floatUp {
+    from {
+        bottom: -20vh;
+    }
+    to {
+        bottom: 120vh;
+    }
+}
+
+.revealed-word {
+    font-size: 20px;
+    color: black;
+}
+
+.splash {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: absolute;
+    border-radius: 50%;
+    animation: splash 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes splash {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(5);
+    }
+}

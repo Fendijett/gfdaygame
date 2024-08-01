@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GF Day Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>GF Day Game</h1>
+    <form id="joinForm">
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <input type="text" id="room" placeholder="Enter code 23 to join" required>
+        <button type="submit">Join</button>
+    </form>
+    <div id="game" style="display:none;">
+        <audio id="backgroundMusic" loop>
+            <source src="{{ url_for('static', filename='music/background_music.mp3') }}" type="audio/mpeg">
+        </audio>
+        <div id="inputWords">
+            <div id="wordInputs">
+                <input type="text" class="wordInput" placeholder="Enter a word">
+            </div>
+            <button id="addWord">+</button>
+            <button id="submitWords">Submit</button>
+        </div>
+        <div id="roomInfo">
+            <h2>Players in room:</h2>
+            <ul id="playersList"></ul>
+            <h3>Ready Status:</h3>
+            <ul id="readyList"></ul>
+        </div>
+        <div id="countdown" style="display:none;">
+            <h2>Game starting in <span id="countdownTimer">5</span> seconds...</h2>
+        </div>
+        <div id="heartContainer" style="display:none;"></div>
+    </div>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
